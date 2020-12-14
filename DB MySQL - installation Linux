@@ -1,0 +1,28 @@
+
+
+    # - instructions for installing of the MySQL - #
+
+        1ª - download MySQL Workbench
+        2ª - install MySQL Workbench
+        3ª - install LAMP (WAMP for Linux)
+             1º - terminal Linux
+             2º - sudo apt-get install lamp-server^
+             3º - test MySQL with the command: systemctl status mysql.service
+             4º - exit
+             5º - terminal Linux, enter DB with the command: sudo mysql -u root -p
+             6º - to change the password with the command: ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+    # - instructions for installing of the phpMyAdmin
+
+        1ª - terminal linux
+        2ª - sudo apt-get install phpmyadmin
+        3ª - http://localhost/phpmyadmin
+             1º - if error 404 not found
+             2º - sudo xed /etc/apache2/apache2.conf
+             3º - include the command in the end: # Include path to phpmyadmin
+                                                    Include /etc/phpmyadmin/apache.conf
+             4º - save and exit xed
+             5º - terminal linux
+             6º - sudo /etc/init.d/apache2 restart
+             7º - try http://localhost/phpmyadmin
+

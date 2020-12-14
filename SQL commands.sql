@@ -10,3 +10,7 @@ data manipulation language - DML
     update
     delete from
     truncate
+    
+    
+data query language - DQL
+	select
