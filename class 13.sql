@@ -1,40 +1,30 @@
 select * from cursos
-where nome like 'p%';
+order  by totaulas;
 
-select * from cursos
-where nome like '%a';
+select totaulas, count(*) from cursos
+group by totaulas
+order by totaulas;
 
-select * from cursos
-where nome like '%a%';
+select * from cursos where totaulas = 30;
 
-select * from cursos
-where nome not like '%a%';
+select carga, count(nome) from cursos where totaulas = 30
+group by carga;
 
-select * from cursos
-where nome like 'ph%p';
+select * from cursos where totaulas = 30
+group by carga;
 
-select * from cursos
-where nome like 'p%p_';
+select ano, count(*) from cursos
+group by ano
+order by count(*) desc;
 
-select * from gafanhotos
-where nome like '%silva%';
+select ano, count(*) from cursos
+group by ano
+having count(ano) >= 5
+order by count(*) desc;
 
-select * from gafanhotos
-where nome like '%guerreiro';
+select avg(carga) from cursos;
 
-select distinct carga from cursos
-order by carga;
-
-select count(*) from cursos;
-
-select max(carga) from cursos
-order by carga;
-
-select max(totaulas) from cursos
-where ano = 2016;
-
-select * from cursos;
-
-select sum(totaulas) from cursos;
-
-select avg(totaulas) from cursos;
+select carga, count(*) from cursos
+where ano > 2015
+group by carga
+having carga > (select avg(carga) from cursos);
