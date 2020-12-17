@@ -16,3 +16,7 @@ group by nacionalidade
 having count(nacionalidade) > 3;
 
 -- 4
+select altura, count(*) from gafanhotos
+where peso > '100.00'
+group by altura
+having altura > (select avg(altura) from gafanhotos);
